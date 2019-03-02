@@ -106,6 +106,8 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
     public void onDraw(final Canvas canvas){
         super.onDraw(canvas);
 
+        Log.i("segundos", String.valueOf(segundosCombate));
+
         if(!sonido.isPlaying()){
             sonido.start();
         }
@@ -214,6 +216,10 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
                     sprites.get(0).getPersonaje().setDefensa(maxDef);
                     sprites.get(0).getPersonaje().setVida(maxHealth);
                     nuevasPropiedades();
+                    sprites.get(0).setAtaca(false);
+                    sprites.get(1).setAtaca(false);
+                    segundosCombate = 0;
+                    tiempoEspera.Detener();
                 }
 
                 AddnewItems();
@@ -222,7 +228,10 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
             }else{
                 if(loss){
                     tiempo.Detener();
-
+                    sprites.get(0).setAtaca(false);
+                    sprites.get(1).setAtaca(false);
+                    segundosCombate = 0;
+                    tiempoEspera.Detener();
                     if(a == 5){
                         MostrarDialogo();
                     }
