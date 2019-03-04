@@ -85,6 +85,7 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
     InterfazUI btnContinuar;
 
     MediaPlayer sonido;
+    MediaPlayer punch;
 
     Bitmap background;
 
@@ -99,6 +100,7 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
         paintTexto = new Paint();
 
         sonido = MediaPlayer.create(getContext(), R.raw.combate);
+        punch = MediaPlayer.create(getContext(), R.raw.punch);
         sonido.start();
     }
 
@@ -414,6 +416,7 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
             parte3 = 25 * sprites.get(1).getPersonaje().getDefensa();
             damage = parte1 * ((parte2 / parte3) + 2);
 
+            punch.start();
             sprites.get(0).setAtaca(true);
             sprites.get(1).getPersonaje().setVida((int) (sprites.get(1).getPersonaje().getVida() - damage));
 
@@ -428,6 +431,8 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
             parte2 = (0.2 * sprites.get(1).getPersonaje().getNivel().getLvl() + 1 ) * sprites.get(1).getPersonaje().getAtaque() * 2;
             parte3 = 25 * sprites.get(0).getPersonaje().getDefensa();
             damage = parte1 * ((parte2 / parte3) + 2);
+
+            punch.start();
 
             sprites.get(1).setAtaca(true);
             sprites.get(0).getPersonaje().setVida((int) (sprites.get(0).getPersonaje().getVida() - damage));
@@ -446,6 +451,8 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
             parte3 = 25 * sprites.get(1).getPersonaje().getDefensa();
             damage = parte1 * ((parte2 / parte3) + 2);
 
+            punch.start();
+
             sprites.get(0).setAtaca(true);
             sprites.get(1).getPersonaje().setVida((int) (sprites.get(1).getPersonaje().getVida() - damage));
 
@@ -457,6 +464,8 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
             parte3 = 25 * sprites.get(0).getPersonaje().getDefensa();
             damage = parte1 * ((parte2 / parte3) + 2);
 
+            punch.start();
+
             sprites.get(1).setAtaca(true);
             sprites.get(0).getPersonaje().setVida((int) (sprites.get(0).getPersonaje().getVida() - damage));
 
@@ -467,6 +476,8 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
             parte2 = (0.2 * sprites.get(1).getPersonaje().getNivel().getLvl() + 1 ) * sprites.get(1).getPersonaje().getAtaque() * 2;
             parte3 = 25 * sprites.get(0).getPersonaje().getDefensa();
             damage = parte1 * ((parte2 / parte3) + 2);
+
+            punch.start();
 
             sprites.get(1).setAtaca(true);
             sprites.get(0).getPersonaje().setVida((int) (sprites.get(0).getPersonaje().getVida() - damage));
@@ -481,6 +492,8 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback {
             parte2 = (0.2 * sprites.get(1).getPersonaje().getNivel().getLvl() + 1 ) * sprites.get(1).getPersonaje().getAtaque() * 2;
             parte3 = 25 * sprites.get(0).getPersonaje().getDefensa();
             damage = parte1 * ((parte2 / parte3) + 2);
+
+            punch.start();
 
             sprites.get(1).setAtaca(true);
             sprites.get(0).getPersonaje().setVida((int) (sprites.get(0).getPersonaje().getVida() - damage));
